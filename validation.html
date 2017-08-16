@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1504.83">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Courier New'; color: #0000cd; -webkit-text-stroke: #0000cd}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Courier New'; color: #ff0000; -webkit-text-stroke: #ff0000}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Courier New'; color: #a52a2a; -webkit-text-stroke: #a52a2a}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Courier New'; -webkit-text-stroke: #000000; min-height: 18.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Courier New'; -webkit-text-stroke: #000000}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Courier New'; color: #a52a2a; -webkit-text-stroke: #a52a2a; background-color: #ffffff}
+    span.s1 {font-kerning: none; background-color: #ffffff}
+    span.s2 {font-kerning: none; color: #a52a2a; background-color: #ffffff; -webkit-text-stroke: 0px #a52a2a}
+    span.s3 {font-kerning: none; color: #ff0000; background-color: #ffffff; -webkit-text-stroke: 0px #ff0000}
+    span.s4 {font-kerning: none; color: #0000cd; background-color: #ffffff; -webkit-text-stroke: 0px #0000cd}
+    span.s5 {font-kerning: none}
+    span.s6 {font-kerning: none; color: #000000; background-color: #ffffff; -webkit-text-stroke: 0px #000000}
+    span.s7 {font-kerning: none; color: #0000cd; -webkit-text-stroke: 0px #0000cd}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;</span><span class="s2">form</span><span class="s3"> name</span><span class="s1">="myForm"&gt;</span></p>
+<p class="p2"><span class="s4">&lt;</span><span class="s2">input</span><span class="s1"> name</span><span class="s4">="myInput"</span><span class="s1"> ng-model</span><span class="s4">="myInput"</span><span class="s1"> required my-directive</span><span class="s4">&gt;</span></p>
+<p class="p3"><span class="s4">&lt;</span><span class="s1">/form</span><span class="s4">&gt;</span></p>
+<p class="p4"><span class="s5"></span><br></p>
+<p class="p3"><span class="s4">&lt;</span><span class="s1">script</span><span class="s4">&gt;</span></p>
+<p class="p5"><span class="s4">var</span><span class="s1"> app = angular.module(</span><span class="s2">'myApp'</span><span class="s1">, []);</span></p>
+<p class="p5"><span class="s1">app.directive(</span><span class="s2">'myDirective'</span><span class="s1">, </span><span class="s4">function</span><span class="s1">() {</span></p>
+<p class="p1"><span class="s6">  </span><span class="s1">return</span><span class="s6"> {</span></p>
+<p class="p5"><span class="s1">    require: </span><span class="s2">'ngModel'</span><span class="s1">,</span></p>
+<p class="p5"><span class="s1">    link: </span><span class="s4">function</span><span class="s1">(scope, element, attr, mCtrl) {</span></p>
+<p class="p5"><span class="s1">      </span><span class="s4">function</span><span class="s1"> myValidation(value) {</span></p>
+<p class="p5"><span class="s1">        </span><span class="s4">if</span><span class="s1"> (value.indexOf(</span><span class="s2">"e"</span><span class="s1">) &gt; -</span><span class="s3">1</span><span class="s1">) {</span></p>
+<p class="p5"><span class="s1">          mCtrl.$setValidity(</span><span class="s2">'charE'</span><span class="s1">, </span><span class="s4">true</span><span class="s1">);</span></p>
+<p class="p5"><span class="s1">        } </span><span class="s4">else</span><span class="s1"> {</span></p>
+<p class="p5"><span class="s1">          mCtrl.$setValidity(</span><span class="s2">'charE'</span><span class="s1">, </span><span class="s4">false</span><span class="s1">);</span></p>
+<p class="p5"><span class="s1">        }</span></p>
+<p class="p5"><span class="s1">        </span><span class="s4">return</span><span class="s1"> value;</span></p>
+<p class="p5"><span class="s1">      }</span></p>
+<p class="p5"><span class="s1">      mCtrl.$parsers.push(myValidation);</span></p>
+<p class="p5"><span class="s1">    }</span></p>
+<p class="p5"><span class="s1">  };</span></p>
+<p class="p5"><span class="s1">});</span></p>
+<p class="p6"><span class="s7">&lt;</span><span class="s5">/script</span><span class="s7">&gt;</span></p>
+</body>
+</html>
